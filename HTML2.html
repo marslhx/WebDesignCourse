@@ -9,52 +9,66 @@
             background: gainsboro;
             background-image: url(images/5.jpg);
             background-size: 100%;
-        }
-        
+        }       
         #div2 {
             background: cornsilk;
         }
     </style>
+
     <link rel="stylesheet" href="style.css">
+
     <meta charset="UTF-8">
     <meta name="description" content="This is a ** site">
     <meta name="keyword" content="HTML,CSS,JavaScript">
     <meta name="author" content="your name">
     <meta http-equiv="refresh" content="30">
+
 </header>
 
 <body>
-    <!--remind other people somthing-->
-    <div id="div1">
-        <a href="../practiced/images/1.jpg">file path case</a>
+    <!--remind you or other people somthing with your code 
+        or just disfunction some elements temporarily-->
+    <p>This page looks sucks, because I did not use css 
+        to give it a good style and layout, so don't be mad with it too much...</p>
+    
+        <div id="div1">
+        <a href="../practiced/images/1.jpg">A case of file path</a>
         <p id="p1" style="color:tomato;
-    font-size:20px;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    border: 2px solid dodgerblue;">style me</p>
+                          font-size:20px;
+                          font-family: 'Courier New', Courier, monospace;
+                          text-align: center;
+                          border: 2px solid dodgerblue;">
+        style me</p>
         <script>
             document.getElementById("p1").innerHTML = "JS created me!";
         </script>
     </div>
+
     <div id="div2">
-        this is <span style="color: red;"> div2</span>
-        <a href="https://www.baidu.com" target="frame1">insert to iframe</a>
-        <iframe src="HTML1.html" frameborder="1" height="200px" width="100%" style="background: honeydew;" name="frame1"></iframe>
+        <p>this is <span style="color: red;"> div2</span></p>
+        <a href="https://www.baidu.com" target="frame1">insert to the frame below</a>
+        <iframe src="HTML1.html" frameborder="1" height="200px"
+         width="100%" style="background: honeydew;" 
+         name="frame1"></iframe>
     </div>
+
     <div id="div3">
-        show me pictures
+        <p>show me pictures</p>
         <img src="images/1.jpg" title="image" alt="verbs">
         <a href="http://baidu.com">
             <img src="images/1.gif" alt="gif" width="200px" style="float: right;">
         </a>
     </div>
+
     <div id="div4">
+        <p>Audio sample</p>
         <audio controls>
                 <source src="1.mp3" type="audio/mpeg">
-            </audio>
+        </audio>
+        <p>Video sample</p>
         <video controls width="500px">
                 <source src="中美比较.MP4" type="video/mp4">
-            </video>
+        </video>
     </div>
 </body>
 
