@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background: turquoise;
+            padding: 5px;
+        }
+        
+        div,
+        p {}
+        
+        div p {
+            background: yellow;
+        }
+        
+        div>p {}
+        
+        div+p {}
+        
+        div~p {}
+        
+        p:first-child {
+            color: red;
+        }
+        
+        p.tooltip {
+            display: none;
+            /*visibility: hidden;*/
+        }
+        
+        p.dropdown:hover+p.tooltip {
+            display: block;
+            height: 60px;
+            background: khaki;
+        }
+        
+        p.highlight:hover {
+            background: chartreuse;
+        }
+        
+        p#intro::first-line {
+            color: red;
+        }
+        
+        p#intro::first-letter {
+            background-color: black;
+            font-size: 50px;
+        }
+        /*p#intro::before {
+            content: url("images/search.png");
+        }*/
+        
+        p#intro::after {
+            content: url("images/search.png");
+        }
+        
+         ::selection {
+            background: hotpink;
+        }
+        
+        [id] {
+            font-family: monospace;
+        }
+        
+        [id=testone] {
+            background: blueviolet;
+        }
+        /*[id|=test] {
+            background: chartreuse;
+        }
+        
+        [id^=test] {
+            background: chocolate
+        }
+        
+        [id$=one] {
+            background: cornflowerblue;
+        }
+        
+        [id~=one] {
+            background: cyan;
+        }
+        
+        [id*=one] {
+            background: lightpink;
+        }*/
+    </style>
+</head>
+
+<body>
+    <h1>Reconfigure the codes and check it!</h1>
+    <h2>Combinator selector cases:</h2>
+    <div>
+        <b>This div has 3 childrens and 1 grandchildren</b>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <span><p>Paragraph 3 in the div.</p></span>
+    </div>
+    <p>Paragraph 4. Not in this div.</p>
+    <p>Paragraph 5. Not in this div.</p>
+    <hr>
+    <h2>pseduo-class selectors cases:</h2>
+    <p class="dropdown">Dropdown a new line when hovering here</p>
+    <p class="tooltip">This is what dropdowned</p>
+    <p class="highlight">Paragraph highlighed when hovering itself</p>
+    <hr>
+    <h2>pseduo-element selectors cases:</h2>
+    <p id=intro> You can use the ::first-line pseudo-element to add a special effect to the first line of a text. You can use the ::first-line pseudo-element to add a special effect to the first line of a text.</p>
+    <hr>
+    <h2>Attribution selectors cases:</h2>
+    <p id="test one">Paragragh with id "test one"</p>
+    <p id="testone">Paragragh with id "testone"</p>
+    <p id="test_one">Paragragh with id "test_one"</p>
+</body>
+
+</html>
