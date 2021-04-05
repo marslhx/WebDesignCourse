@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <!--
+    <base href="../practiced/images/">
+    -->
+    <style>
+        body {
+            background: gainsboro;
+            background-image: url(images/5.jpg);
+            background-size: 100%;
+        }
+        
+        #div2 {
+            background: cornsilk;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a ** site">
+    <meta name="keyword" content="HTML,CSS,JavaScript">
+    <meta name="author" content="your name">
+    <meta http-equiv="refresh" content="30">
+</header>
+
+<body>
+    <!--remind you or other people somthing-->
+    <div id="div1">
+        <a href="images/3.jpg">file path case</a>
+        <p id="p1" style="color:tomato;
+                        font-size:20px;
+                        font-family: 'Courier New', Courier, monospace;
+                        text-align: center;
+                        border: 2px solid dodgerblue;">style me</p>
+        <script>
+            document.getElementById("p1").innerHTML = "JS created me!";
+        </script>
+    </div>
+
+    <div id="div2">
+        this is <span style="color: red;"> div2</span>
+        <a href="http://www.baidu.com" target="frame1">insert to iframe</a>
+        <iframe src="basic elements.html" frameborder="1" height="200px" width="100%" style="background: honeydew;" name="frame1"></iframe>
+    </div>
+
+    <div id="div3">
+        show me pictures
+        <img src="images/1.jpg" title="image" alt="verbs">
+        <a href="http://baidu.com">
+            <img src="images/1.gif" alt="gif" width="200px" style="float: right;">
+        </a>
+    </div>
+
+    <div id="div4">
+        <audio controls>
+                <source src="1.mp3" type="audio/mpeg">
+            </audio>
+        <video controls width="500px">
+                <source src="中美比较.MP4" type="video/mp4">
+            </video>
+    </div>
+
+</body>
+
+</html>
