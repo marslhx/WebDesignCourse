@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img {
+            width: 33%;
+            padding: 5px;
+            box-sizing: border-box;
+            /* works for elements which set padding*/
+        }
+        
+        img#image2 {
+            float: left;
+        }
+        
+        img#image1 {
+            float: right;
+        }
+        
+        img.new {
+            height: 300px;
+        }
+        
+        p {
+            border: hotpink solid;
+            overflow: auto;
+            /*clear: both;*/
+        }
+        
+        div {
+            clear: both;
+            /*display: flex;*/
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reconfigure the codes and check it!</h1>
+    <h2>make elements float:</h2>
+    <img src="images/2.jpg" id="image2">
+    <p><img src="images/1.gif" id="image1">You can use overflow property to make the border embarce the image.
+    </p>
+    <div>
+        <div>You can use height or display property to make all picture align in vertical direction</div>
+        <img src="images/3.jpg" class="new">
+        <img src="images/4.jpg" class="new">
+        <img src="images/5.jpg" class="new">
+    </div>
+</body>
+
+</html>
