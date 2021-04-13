@@ -154,7 +154,6 @@ audio {
     margin: 0 auto;
     background: black;
     color: white;
-    font-size: px;
 }
 
 .comment-wrapper h2 {
@@ -171,6 +170,6 @@ audio {
     padding: 0 20px;
 }
 
-comment-container p:last-child {
+.comment-container p:last-child {
     flex: 5;
 }
