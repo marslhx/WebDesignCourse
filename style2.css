@@ -1,0 +1,176 @@
+body {
+    background-color: thistle;
+    width: 80%;
+    min-width: 1024px;
+    margin: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Gill Sans';
+}
+
+p,
+input,
+li,
+table {
+    font-family: 'Arial Narrow'
+}
+
+table {
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    font-style: italic;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: skyblue 2px 2px;
+}
+
+nav {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+nav .search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav li {
+    display: inline-block;
+    flex: 1;
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.search input[type=search] {
+    flex: 3;
+    font-size: 20px;
+}
+
+.search input[type=submit] {
+    flex: 1;
+    background: black;
+    color: white;
+    font-family: 'Arial Narrow';
+    font-size: 16px;
+    height: 30px;
+    margin-left: 10px;
+    ;
+}
+
+nav,
+article,
+.secondary,
+footer {
+    background-color: white;
+    padding: 10px 10px;
+}
+
+main {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+article {
+    flex: 5;
+}
+
+.secondary {
+    flex: 2;
+}
+
+.secondary a {
+    text-decoration: none;
+    ;
+}
+
+.secondary li {
+    list-style-type: none;
+}
+
+thead {
+    background-color: aliceblue;
+}
+
+tbody tr:last-child {
+    background-color: aliceblue;
+}
+
+tr {
+    text-align: center;
+}
+
+img,
+form,
+audio {
+    display: block;
+    margin: 0 auto;
+}
+
+.comments {
+    width: 100%;
+    padding: 10px;
+    background-color: aliceblue;
+    font-family: 'Arial Narrow';
+}
+
+.flex-pair {
+    display: flex;
+    padding: 5px 15%;
+}
+
+.flex-pair label {
+    flex: 1;
+    text-align: right;
+    padding: 5px;
+}
+
+.flex-pair input {
+    flex: 5;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.comments [type=submit] {
+    display: block;
+    margin: 0 auto;
+    background: black;
+    color: white;
+    font-size: px;
+}
+
+.comment-wrapper h2 {
+    text-align: center;
+}
+
+.comment-container {
+    display: flex;
+}
+
+.comment-container p:first-child {
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+comment-container p:last-child {
+    flex: 5;
+}
