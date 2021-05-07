@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("images/6.jpeg");
+            background-repeat: no-repeat;
+            min-width: 800px;
+            /*避免窗口过小时导航换行*/
+        }
+        
+        img {
+            height: 100px;
+            /*设置height，而不是width是方便统一高度*/
+            margin: 0 20px 0 10%;
+            float: left;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .dropdown {
+            background-color: mintcream;
+            position: static;
+        }
+        
+        a,
+        .dropdown {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: lightslategray;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .dropdown-content {
+            background-color: rgb(255, 250, 250, 0.7);
+            /*点色块选择颜色模型*/
+            width: 100px;
+            text-align: left;
+            position: absolute;
+            /*根据最近一个positioned的元素*/
+            display: none;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        form {
+            text-align: center;
+            /*居中不用magin:auto*/
+            position: fixed;
+            top: 40%;
+            width: 100%;
+        }
+        
+        input[type="search"] {
+            background-image: url("images/search.png");
+            background-position: 0px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: seashell;
+            width: 50%;
+            height: 40px;
+            text-indent: 50px;
+            font-size: 20px;
+            border: none;
+            border-radius: 0.3cm;
+            outline: none;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        input[type="search"]:focus {
+            width: 55%;
+            /*CSS暂时不支持父级选择器，否则可以在选中时使背景图像变暗，现在只能通过JS来实现*/
+        }
+        
+        input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 0.1cm;
+            outline: none;
+            /*submit点击时也有outline*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/bing.png" alt="">
+    <a href="#">picture</a>
+    <a href="#">video</a>
+    <div class="dropdown">more
+        <div class="dropdown-content">
+            <a href="#">map</a><br>
+            <a href="#">news</a>
+        </div>
+    </div>
+    <!--如果漏掉斜线，会把下面的form部分当做. dropdown的div的一部分-->
+    <form action="">
+        <input type="search" name="" id="search"><br>
+        <input type="submit" value="search">
+    </form>
+</body>
+
+</html>

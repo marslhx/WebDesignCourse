@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--先设置几个block的背景颜色，然后再调节其位置和尺寸-->
+    <style>
+        .box {
+            width: 250px;
+            /*等同于margin的宽度*/
+            border-style: dotted;
+            /*margin: auto;*/
+            line-height: 25px;
+            background-color: lightsteelblue;
+        }
+        
+        .margin {
+            background-color: lightpink;
+            text-align: center;
+            height: 250px;
+        }
+        
+        .border {
+            background-color: darkblue;
+            height: 200px;
+            /*根据上下两端line-height计算*/
+            width: 200px;
+            margin: auto;
+        }
+        
+        .padding {
+            background-color: lightyellow;
+            position: relative;
+            top: 5px;
+            /*没有文字，所以单独定义上下高度*/
+            height: 190px;
+            /*根据上下设计距离计算*/
+            width: 190px;
+            margin: auto;
+        }
+        
+        .content {
+            background-color: lightgreen;
+            height: 140px;
+            /**/
+            width: 140px;
+            line-height: 140px;
+            margin: auto;
+        }
+        
+        .top,
+        .bottom {
+            text-align: center;
+            background-color: lightsteelblue;
+            width: 250px;
+            margin: auto
+        }
+        
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .left,
+        .right {
+            background-color: lightsteelblue;
+            height: 250px;
+            line-height: 250px;
+            margin: 0px;
+            /*避免上下margin对布局的影响*/
+        }
+    </style>
+</head>
+
+<body>
+    <p class="top">top</p>
+    <div class="flex">
+        <!-- 用于横向自动对齐-->
+        <p class="left">&nbsp&nbspleft</p>
+        <!--不增加两个&nbsp左侧将和右侧的文字不等长，并导致flex宽度不一致-->
+        <div class="box">
+            <div class="margin">margin
+                <div class="border">
+                    <div class="padding">padding
+                        <div class="content">
+                            content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="right">right</p>
+    </div>
+    <p class="bottom">bottom</p>
+</body>
+
+</html>s
