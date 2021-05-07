@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script src="myScript.js"></script>
+    <script>
+        document.getElementById("demo").innerHTML = "5 + 6 = " + (5 + 6);
+        document.write("7 + 8 = " + (7 + 8) + "<br>");
+        window.alert("11 + 12 = " + (11 + 12) + "<br>");
+        document.write("check console for result of 14+15" + "<br>")
+        console.log("14 + 15 = " + (14 + 15) + "<br>");
+        document.write("check variables in JS codes" + "<br>")
+        var a = 5;
+        var b = 6;
+        b += 10; //b=b+10;
+        var c = a + b;
+        var a = "name";
+        var d = "Hue";
+        var e = a + "             " + d;
+        var x, y, z;
+        var arr = [1, 2, 3];
+        var book = {
+            title: "Gone with wind",
+            price: 55
+        }
+        document.write("Your age is " + 24 + "<br>");
+        document.write("c = " + c + "<br>");
+        document.write("arr[1] = " + arr[1] + "<br>");
+        document.write("a[2] = " + a[2] + "<br>");
+        document.write('book["title"] = ' + book["title"] + "<br>");
+        document.write("21 ** 3 = " + (21 ** 3) + "<br>");
+        document.write("5 % 2 = " + (5 % 2) + "<br>");
+        document.write("--book['price'] = " + (--book['price']) + "<br>"); //price=price-1
+        document.write("e = " + e + "<br>");
+        document.write('2 + 3 + "5" = ' + (2 + 3 + "5") + "<br>");
+        document.write("result of 'a != b' is " + (a != b) + "<br>");
+        document.write('result of "5" === 5 is ' + ("5" === 5) + "<br>");
+        document.write("result of 'true || false' is " + (true || false) + "<br>");
+    </script>
+    <script>
+    </script>
+    <button onclick="document.write(9+10)">caculate(9+10)</button>
+</body>
+
+</html>

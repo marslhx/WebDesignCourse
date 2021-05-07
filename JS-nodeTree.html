@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head></head>
+
+<body>
+    <p>Open console to check nodes in this page, then open Editor to open page to compare them with elements structure of this page.</p>
+    <div>
+        <p></p>
+        <p></p>
+    </div>
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <!---->
+    <form action="">
+        <input type="text">
+    </form>
+    <script>
+        var domAll = document.all;
+        for (i = 0; i < domAll.length; i++) {
+            console.log(domAll[i].nodeName);
+            var domChild = domAll[i].childNodes;
+            console.log(domChild);
+        }
+    </script>
+</body>
+
+</html>

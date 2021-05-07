@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #demo {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <p>My first JavaScript</p>
+
+    <button onclick="document.getElementById('demo').innerHTML=Date()">Show me time</button>
+    <button onclick="document.getElementById('demo').innerHTML='Hello JavaScript'">Say Hi</button>
+    <button onclick="document.getElementById('demo').style.fontSize='35px'">Resize me</button>
+    <button onclick="document.getElementById('demo').style.visibility='hidden'">Hide me</button>
+    <button onclick="document.getElementById('demo').style.visibility='visible'">Show me</button>
+    <button onclick="document.getElementById('demo').style.display='none'">Remove me</button>
+    <button onclick="document.getElementById('demo').style.display='block'">Send me back</button>
+    <button onclick="myFunction()">Call a function outside</button>
+    <button onclick="document.getElementById('demo').innerHTML=11*11">Caculate 11*11</button>
+    <button onclick="demo.innerHTML=Date()">Show me time</button>
+
+    <p id='demo'></p>
+
+    <button onclick="window.alert('Attention!')">Alert somthing</button>
+    <button onclick="document.write('All rewrited')">Rewrite somthing</button>
+    <button onclick="console.log('you can find me on console')">Output somthing on console</button>
+    <hr>
+
+    <img id="myImage" src="images/pic_bulboff.gif" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='images/pic_bulbon.gif'">Turn on the light</button>
+    <button onclick="document.getElementById('myImage').setAttribute('src','images/pic_bulboff.gif')">Turn off the light</button>
+
+    <script>
+        document.getElementById('demo').innerHTML = " Click buttons above to operate on me ";
+        var demo = document.getElementById('demo'); //this is a comment
+        console.log(typeof(Date()));
+    </script>
+    <script src="myScript.js "></script>
+</body>
+
+</html>
