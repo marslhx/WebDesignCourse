@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: solid;
+        }
+        
+        ul {
+            border: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div>a div with 2 paragraphs
+        <p onmouseover="this.style.color='red';" onmouseout="this.style.backgroundColor='green'">p1:try movemouse overhere then leave</p>
+        <p id="p2">p2:click me to restyle</p>
+    </div>
+    <ul>an unordered list
+        <li>listItem1</li>
+        <li>listItem2</li>
+    </ul>
+    <p id="p3">p3:I can be inserted</p>
+    <p>//try to remove the comment symbols</p>
+    <p>//open console to check result of JS codes</p>
+    <form action="">
+        Make your input to be uppercase<input type="text" name="" id="" onfocus="uppercase(this)">
+    </form>
+    <button>insert a new listitem</button>
+    <button>insert p3</button>
+    <button>remove p2</button>
+    <button>replace p3 with p1</button>
+
+    <script>
+        console.log(document.childNodes);
+
+        var pCollection = document.getElementsByTagName("p");
+        console.log(pCollection);
+
+        var pNodeList = document.querySelectorAll("p");
+        console.log(pNodeList);
+        console.log(pNodeList.length);
+
+        var p1 = pCollection[0];
+        var p2 = document.getElementById("p2");
+        var p3 = document.getElementById("p3");
+
+        p2.addEventListener("click", restyleP2);
+
+        function restyleP2() {
+            p2.style.color = "white";
+            p2.style.backgroundColor = "black";
+        }
+
+        var buttons = document.getElementsByTagName("button");
+
+        var uList = document.getElementsByTagName("ul")[0];
+
+        function insertListItem() {
+            var newListItem = document.createElement("li");
+            var newItemContent = document.createTextNode("new created listItem")
+            newListItem.appendChild(newItemContent);
+            uList.appendChild(newListItem);
+            //uList.insertBefore(newListItem, uList.childNodes[0]);
+        }
+        console.log(uList.childNodes[0]);
+        buttons[0].addEventListener("click", insertListItem)
+
+        function insertP3() {
+            p1.parentNode.appendChild(p3);
+        }
+
+        function removeP2() {
+            p1.parentNode.removeChild(p2);
+        }
+
+        function replaceP1P3() {
+            p1.parentNode.replaceChild(p3, p1);
+        }
+
+        buttons[1].addEventListener("click", insertP3);
+        buttons[2].addEventListener("click", removeP2);
+        buttons[3].addEventListener("click", replaceP1P3);
+
+        function uppercase(a) {
+            a.style.textTransform = 'uppercase';
+        }
+    </script>
+</body>
+
+</html>
