@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <p>odd click show grey, even click show green</p>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+    </ul>
+</body>
+<script>
+    var one = document.getElementsByTagName('li');
+    for (i = 0; i < one.length; i++) {
+        one[i].setAttribute('num', 0);
+        one[i].onclick = function() {
+            num = parseInt(this.getAttribute('num'));
+            if (num % 2 == 0) {
+                this.style.background = "grey";
+            } else {
+                this.style.background = "green";
+            }
+            this.setAttribute('num', num + 1);
+        }
+    }
+</script>
+
+</html>

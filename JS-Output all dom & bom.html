@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+</head>
+<body>
+<p>
+	Output all properties and methods of window and document object
+</p>
+<button onclick="showDOM()">Show all DOM</button>
+<button onclick="showBOM()">Show all BOM</button>
+
+<script>
+function showDOM() {
+	for(var i in document){
+    document.write("document."+i+"<br/>"); 
+	}
+}
+function showBOM() {
+	for(var i in window){
+    document.write("window."+i+"<br/>"); 
+	}
+}
+</script>
+</body>
+</html> 

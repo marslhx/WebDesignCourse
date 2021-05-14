@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title></title>
+</head>
+
+<body>
+    show picture of city you choose.
+    <select id="select_id">
+    <option>select one</option>
+    <option>peking</option>
+    <option>shanghai</option>
+    <option>hangzhou</option>
+ </select>
+    <div id="pic">
+    </div>
+    <script>
+        var obj = document.getElementById("select_id");
+        obj.onchange = function() {
+            for (var i = 0; i < obj.options.length; i++) {
+                if (obj.options[i].selected) {
+                    var url = 'images' + '\\' + obj.options[i].value + '.jpeg';
+                    var imgNode = document.createElement('img');
+                    imgNode.setAttribute('src', url);
+                    document.getElementById('pic').appendChild(imgNode);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

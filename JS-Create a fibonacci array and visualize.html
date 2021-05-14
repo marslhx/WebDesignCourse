@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+
+    <style>
+        p {
+            background-color: powderblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        function fibonacci(n) {
+            if (n === 0) {
+                return 0;
+            }
+            if (n === 1) {
+                return 1;
+            }
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        var a = [];
+        for (i = 0; i <= 20; i++) {
+            a[i] = fibonacci(i);
+            //alert(a[i]);
+        }
+        //以下部分只能放在body元素内，否则执行js时body及其中的元素还未生成，因此无法操作
+        for (i = 0; i <= 12; i++) {
+            var para = document.createElement("p"); //只是创建了孤立的p元素，无法直接在body中显示
+            para.innerHTML = a[i]; //p元素没有内容时宽度无法显示
+            para.style.width = a[i] * 10 + 'px'; //不加px无法正确显示宽度
+            document.body.appendChild(para); //将创建的p元素逐个加到body元素中作为子元素
+        }
+    </script>
+</body>
+
+</html>
