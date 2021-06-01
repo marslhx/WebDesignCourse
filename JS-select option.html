@@ -1,0 +1,53 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h2>What's your hobbies?</h2>
+    <input type="checkbox" name="love" />basketball<br/>
+    <input type="checkbox" name="love" />badminton<br/>
+    <input type="checkbox" name="love" />ping-pong ball<br/>
+    <input type="checkbox" name="love" />football<br/>
+
+    <hr>
+
+    <button onclick="optionAll();" />Select All</button>
+    <button onclick="optionNoAll();" />Select None</button>
+    <button onclick="reverseAll();" />Select invert</button>
+
+</body>
+
+<script type="text/javascript">
+    //select all
+    function optionAll() {
+        var love1 = document.getElementsByName("love");
+        for (var i = 0; i < love1.length; i++) {
+            var love11 = love1[i];
+            love11.checked = true;
+        }
+    }
+    //select none
+    function optionNoAll() {
+        var love2 = document.getElementsByName("love");
+        for (var i = 0; i < love2.length; i++) {
+            var love21 = love2[i];
+            love21.checked = false;
+        }
+    }
+    //select reverse
+    function reverseAll() {
+        var love3 = document.getElementsByName("love");
+        for (var i = 0; i < love3.length; i++) {
+            var love31 = love3[i];
+            if (love31.checked == true) {
+                love31.checked = false;
+            } else {
+                love31.checked = true;
+            }
+        }
+
+    }
+</script>
+
+</html>
