@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title> New Document </title>
+
+    <style type="text/css">
+        div table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    line：
+    <input type="text" id="l"> colume：
+    <input type="text" id="c">
+
+
+
+    <input type="button" value="create table" onclick="create();">
+    <br/>
+    <br/>
+    <div id="divv">
+    </div>
+</body>
+<script type="text/javascript">
+    function create() {
+
+        var rows = document.getElementById("l").value;
+        var columes = document.getElementById("c").value;
+
+        var tab = "<table border='1'>";
+        for (var i = 1; i <= rows; i++) {
+            tab += "<tr>";
+            for (var j = 1; j <= columes; j++) {
+                var k = (i - 1) * columes + j;
+                tab += "<td style='text-align:center'>" + k + "</td>"
+            }
+            tab += "</tr>";
+        }
+        tab += "</table>";
+
+        var divv = document.getElementById("divv");
+        divv.innerHTML = tab;
+    }
+</script>
+
+</html>

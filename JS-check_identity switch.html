@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+</head>
+
+<body>
+    <p>Input your name, and check your identity!(student/assitant/lecturer)</p>
+    <pre>switch(expression) {
+  case x:
+    // code block
+    break;/
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+</pre>
+
+    <form>
+        Your name：<input type="text" id="name">
+        <button onclick="judge()">OK</button>
+    </form>
+
+    <script>
+        function judge() {
+            var yourName = document.getElementById('name').value.toLowerCase();
+            switch (yourName) {
+                case "alina":
+                    alert("student");
+                    break;
+                case "bella":
+                    alert("student");
+                    break;
+                case "wang mihang":
+                    alert("assitant");
+                    break;
+                case "shawn":
+                    alert("lecturer");
+                    break;
+                default:
+                    alert("Not belong to this course");
+            }
+        }
+    </script>
+</body>
+
+</html>

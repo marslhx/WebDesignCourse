@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 100%;
+            height: 100px;
+            border: solid;
+            background-color: tomato;
+            /*css property value do not need ""*/
+            /*position: relative;	不修改posistion的默认值 div的位置无法移动*/
+            /*body{margin: 0 auto}  不强制清空父元素的margin值，div的位置会受body自身的margin值影响。解决办法最好是针对要移动的div独立设position为absolute*/
+        }
+        
+        img {
+            position: relative;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='d2'>Touch me to change color</div>
+    <!--js identifier could not use '-' in it's name-->
+
+    <div id='d3'>Count touch</div>
+
+    <p>Touch to move</p>
+    <img id='img' src='image/cat.gif'>
+    <!--要移动其位置要修改其position默认属性值,animation的属性值是确保动画停留在最后一帧-->
+
+    <!--设置pre需要为client留足空间，否则可采集的空间范围是由img的位置（页面底部）决定的-->
+    <script type="text/javascript">
+        var div2 = document.getElementById('d2');
+        var div3 = document.getElementById('d3');
+        var img = document.getElementById('img');
+        div2.addEventListener('touchstart', changeColor);
+        div3.addEventListener('touchstart', countTouch);
+        document.body.addEventListener('touchstart', moveImg);
+
+        function changeColor(event) {
+            //event.preventDefault();
+            div2.style.backgroundColor = 'green';
+        }
+
+        function countTouch(event) {
+            div3.innerHTML = "触摸点个数为" + event.touches.length;
+        }
+
+        function moveImg(event) {
+            img.style.left = event.touches[0].clientX + 'px';
+            img.style.top = -300 + event.touches[0].clientY + 'px';
+            console.log('X: ' + event.touches[0].clientY + ' Y: ' + event.touches[0].clientY);
+        }
+    </script>
+</body>
+
+</html>

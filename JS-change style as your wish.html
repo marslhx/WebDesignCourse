@@ -1,0 +1,69 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Function reference，change Attribute's value of div</title>
+    <style>
+        #outer {
+            width: 300px;
+            margin: 0 auto;
+        }
+        
+        button {
+            margin-right: 5px;
+        }
+        
+        input {
+            padding: 3px;
+        }
+        
+        label {
+            width: 90px;
+            display: inline-block;
+            text-align: right;
+        }
+        
+        #div1 {
+            color: white;
+            width: 300px;
+            height: 200px;
+            background: black;
+            margin: 0 auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="outer">
+        <p><label>Property：</label><input type="text"></p>
+        <p><label>Value：</label><input type="text"></p>
+        <p><label></label><button onclick="change()">OK</button><button onclick="reset()">Reset</button></p>
+    </div>
+
+    <div id="div1">
+        Input "Attribute" and "Value" in input box，Click “OK” button to check the result.
+    </div>
+
+    <script>
+        var changeStyle = function(elem, name, value) {
+            elem.style[name] = value;
+        }
+
+        var oDiv = document.getElementById("div1");
+        var oInput = document.getElementsByTagName("input");
+
+        function change() {
+            changeStyle(oDiv, oInput[0].value, oInput[1].value); //add style attribute and set property value for it
+        }
+
+        function reset() {
+            oDiv.removeAttribute("style"); //It will not affect style properties in css
+        }
+    </script>
+
+</body>
+
+</html>

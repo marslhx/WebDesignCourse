@@ -1,0 +1,82 @@
+<!DOCTYPE html >
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Apprise BMI</title>
+    <style>
+        button {
+            margin-right: 5px;
+        }
+        
+        input {
+            padding: 3px;
+        }
+        
+        label {
+            width: 170px;
+            display: inline-block;
+            text-align: right;
+        }
+        
+        div {
+            width: 1000px;
+            text-align: center;
+            margin: 0 auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        About standard weight(ST):<br><br> For man:<br>ST=height-100.<br>if (weight-ST)>3, overweight;<br> if (weight-ST)
+        <-3, underweight;<br> otherwise, normal.<br><br> For woman:<br> ST=height-110.<br>if (weight-ST)>3, overweight;<br> if (weight-ST)
+            <-3, underweight;<br> otherwise, normal.<br>
+    </div>
+
+    <div style="border: solid;">
+        <p><label>gender(male/female)：</label><input type="text"></p>
+        <p><label>height(cm)：</label><input type="text"></p>
+        <p><label>weight(kg)：</label><input type="text"></p>
+        <p><label></label><button onclick="apprise()">Appraise</button></p>
+        <p>
+            Input "gender","height" and "weight" in input box，Click “Appraise” button to check the result.
+        </p>
+    </div>
+
+    <script>
+        function apprise() {
+            var oInput = document.getElementsByTagName("input");
+            var gender = oInput[0].value.toLowerCase();
+            var height = oInput[1].value
+            var weight = oInput[2].value
+            var ST_man = weight - (height - 100)
+            var ST_woman = weight - (height - 110);
+
+            if (gender == "male") {
+                if (ST_man > 3) {
+                    alert("overweight！");
+                } else if (ST_man < -3) {
+                    alert("underweight！");
+                } else {
+                    alert("normal！");
+                }
+
+            } else if (gender == "female") {
+                if (ST_woman > 3) {
+                    alert("overweight！");
+                } else if (ST_woman < -3) {
+                    alert("underweight！");
+                } else {
+                    alert("normal！");
+                }
+            } else {
+                alert("wrong input of gender！");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

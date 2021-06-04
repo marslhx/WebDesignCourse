@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 250px;
+            height: 50px;
+            border: solid;
+            background-color: tomato;
+            /*css property value do not need ""*/
+            /*position: relative;	不修改posistion的默认值 div的位置无法移动*/
+            /*body{margin: 0 auto}  不强制清空父元素的margin值，div的位置会受body自身的margin值影响。解决办法最好是针对要移动的div独立设position为absolute*/
+        }
+        
+        #d0 {
+            position: absolute;
+            top: 300px;
+            background-color: yellow;
+            z-index: 1;
+        }
+        /* id值不要以数字开头！*/
+        
+        @keyframes ani1 {
+            /*not keyframe, don't miss 's' in the end*/
+            from {
+                left: 0;
+            }
+            to {
+                left: 500px;
+            }
+        }
+        
+        img {
+            position: relative;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="this.style.backgroundColor='green'">click me to change color</div>
+    <!--js identifier could not use '-' in it's name-->
+
+    <div onmouseover="this.style.backgroundColor='powderblue'" onmouseout="this.style.backgroundColor='orange'">hover on me to change color</div>
+
+    <div id="d1">press space key to extend me</div>
+    <!--div元素不能直接用onkeydown，因为不会默认focus，所以需要将contenteditable属性设为true，一般是用于input元素-->
+
+    <form>
+        input somthing:<input id="" type="text" onfocus="this.style.backgroundColor='pink'" onchange="this.style.color='red'">
+    </form>
+
+    <img onload="this.style.animation='ani1 2s forwards'" src='image/cat.gif'>
+    <!--要移动其位置要修改其position默认属性值,animation的属性值是确保动画停留在最后一帧-->
+
+    <div id='d0'>move it by direction key</div>
+
+    <script type="text/javascript">
+        var div0 = document.getElementById('d0');
+        var div1 = document.getElementById('d1');
+        var step = 50;
+        document.addEventListener("keydown", keydown);
+        //键盘监听，注意：在非ie浏览器和非ie内核的浏览器
+        //参数1：表示事件，keydown:键盘向下按；参数2：表示要触发的事件
+        function keydown(event) {
+            //表示键盘监听所触发的事件，同时传递参数event
+            switch (event.keyCode) {
+                case 37:
+                    //alert("左键");
+                    div0.style.left = div0.offsetLeft - step + "px";
+                    //要注意右侧需要用offsetLeft（只读）而非style.left（可读可写）,除非元素在行内已定义过left的Attribute，否则需用offsetLeft
+                    break;
+                case 38:
+                    //alert("向上");
+                    div0.style.top = div0.offsetTop - step + "px";
+                    break;
+                case 39:
+                    //alert("右键");
+                    div0.style.left = div0.offsetLeft + step + "px";
+                    break;
+                case 40:
+                    //alert("向下");
+                    div0.style.top = div0.offsetTop + step + "px";
+                    break;
+                case 32:
+                    div1.setAttribute('style', 'width:500px');
+                    //此处不能用setAttribute('width','500px'),width是style（Attribute）的property，不能作为div元素的直接属性在js中设置
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
