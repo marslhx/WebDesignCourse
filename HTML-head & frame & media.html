@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-<header>
+
+<head>
+    <title>2nd class</title>
     <!--
     <base href="images/">
     -->
@@ -10,54 +12,62 @@
             background-image: url(images/5.jpg);
             background-size: 100%;
         }
-        
-        #div2 {
-            background: cornsilk;
-        }
     </style>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="description" content="This is a ** site">
+    <meta name="description" content="This is a test site">
     <meta name="keyword" content="HTML,CSS,JavaScript">
     <meta name="author" content="your name">
     <meta http-equiv="refresh" content="30">
-</header>
+    <!--
+    <script>
+        document.getElementById("p1").innerHTML = "JS created me!";
+     </script>
+     -->
+</head>
 
 <body>
     <!--remind you or other people somthing-->
+    <h1 style="text-align: center;">Cases of second class</h1>
+    <hr>
+    <p>This page has set <b>title, description, keyword, author, charset, style and base URL</b>.It is also linked with a <b>stylesheet</b> and a piece of <b>JavaScript</b>.</p>
+    <p>This page refresh itself every <mark>30</mark> seconds</p>
+    <p>You can find them in <sub>source code</sub> of this page.</p>
+    <hr>
     <div id="div1">
-        <a href="images/3.jpg">file path case</a>
-        <p id="p1" style="color:tomato;
-                        font-size:20px;
+        <h2>Case 1: File path. </h2>
+        <a href="images/3.jpg">Show me a local picture. </a>
+        <hr>
+        <h2>Case 2: Stylize</h2>
+        <p id="p1" style="color:red;
+                        font-size:36px;
                         font-family: 'Courier New', Courier, monospace;
-                        text-align: center;
-                        border: 2px solid dodgerblue;">style me</p>
-        <script>
-            document.getElementById("p1").innerHTML = "JS created me!";
-        </script>
+                        text-align: left;
+                        border: 2px dotted blue;">I stylized text color, font-size, font-family, text-align, border of this paragraph.</p>
     </div>
-
-    <div id="div2">
-        this is <span style="color: red;"> div2</span>
-        <a href="https://www.baidu.com" target="frame1">insert to iframe</a>
-        <iframe src="HTML-basic elements.html" frameborder="1" height="200px" width="100%" style="background: honeydew;" name="frame1"></iframe>
+    <br>
+    <div id="div2" style="border:5px solid grey">
+        <h2>Case 3: Here is <span style="color: red;"> a frame</span></h2>
+        <iframe src="HTML-basic elements.html" frameborder="1" height="400px" width="100%" style="background: honeydew;" name="frame1"></iframe>
+        <p>insert <a href="http://www.hdu.edu.cn" target="frame1">another page</a> to this frame</p>
     </div>
-
-    <div id="div3">
-        show me pictures
-        <img src="images/1.jpg" title="image" alt="verbs">
+    <br>
+    <div id="div3" style="border:5px solid grey">
+        <h2>Case 4: Image with alt info & image as a link</h2>
+        <img src="images/1.jpg" title="image" alt="It is a verbs" width="600">
         <a href="http://baidu.com">
-            <img src="images/1.gif" alt="gif" width="200px" style="float: right;">
+            <img src="images/1.gif" alt="gif" width="500px">
         </a>
     </div>
-
-    <div id="div4">
+    <br>
+    <div id="div4" style="border:5px solid grey">
+        <h2>Case 5: Video & Audio with control panel</h2>
+        <video controls width="600px">
+                <source src="中美比较.MP4" type="video/mp4">
+        </video>
         <audio controls>
                 <source src="1.mp3" type="audio/mpeg">
-            </audio>
-        <video controls width="500px">
-                <source src="中美比较.MP4" type="video/mp4">
-            </video>
+        </audio>
     </div>
 
 </body>
